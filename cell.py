@@ -11,12 +11,14 @@ class Cell(object):
 	list : cat_percentage [class Category]
 	
 	"""
-	def __init__(self,id, cat_list ):
+	def __init__(self,id, cat_list):
 		self.id = id
 		self.cat_list = cat_list
 		self.load = self.calculate_load()
 		self.radius = CELL_RADIUS
 		self.cell_barring_flag = 0
+		self.coordinate_x = 0
+		self.coordinate_y = 0
 
 	def calculate_load(self):
 		loads = [x.load for x in self.cat_list]

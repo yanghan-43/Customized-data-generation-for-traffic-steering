@@ -1,25 +1,27 @@
 import csv
 
-cell_0_fileHeader = ["time_period", "cat_id", "pe_id", "load"]
-cell_0_total_load_fileHeader = ["time_period", "total_load", "cell_barring", "cell_radius"]
+cell_0_fileHeader = ["time_period", "cell_id", "pe_id", "load"]
+cell_0_total_load_fileHeader = ["time_period", "total_load", "cell_barring", "cell_radius", "pes_num"]
 
-cell_1_fileHeader = ["time_period", "cat_id", "pe_id", "load"]
-cell_1_total_load_fileHeader = ["time_period", "total_load", "cell_barring", "cell_radius"]
+cell_1_fileHeader = ["time_period", "cell_id", "pe_id", "load"]
+cell_1_total_load_fileHeader = ["time_period", "total_load", "cell_barring", "cell_radius", "pes_num"]
 
-cell_2_fileHeader = ["time_period", "cat_id", "pe_id", "load"]
-cell_2_total_load_fileHeader = ["time_period", "total_load", "cell_barring", "cell_radius"]
+cell_2_fileHeader = ["time_period", "cell_id", "pe_id", "load"]
+cell_2_total_load_fileHeader = ["time_period", "total_load", "cell_barring", "cell_radius", "pes_num"]
 
-cell_3_fileHeader = ["time_period", "cat_id", "pe_id", "load"]
-cell_3_total_load_fileHeader = ["time_period", "total_load", "cell_barring", "cell_radius"]
+cell_3_fileHeader = ["time_period", "cell_id", "pe_id", "load"]
+cell_3_total_load_fileHeader = ["time_period", "total_load", "cell_barring", "cell_radius", "pes_num"]
 
-cell_4_fileHeader = ["time_period", "cat_id", "pe_id", "load"]
-cell_4_total_load_fileHeader = ["time_period", "total_load", "cell_barring", "cell_radius"]
+cell_4_fileHeader = ["time_period", "cell_id", "pe_id", "load"]
+cell_4_total_load_fileHeader = ["time_period", "total_load", "cell_barring", "cell_radius", "pes_num"]
 
-cell_5_fileHeader = ["time_period", "cat_id", "pe_id", "load"]
-cell_5_total_load_fileHeader = ["time_period", "total_load", "cell_barring", "cell_radius"]
+cell_5_fileHeader = ["time_period", "cell_id", "pe_id", "load"]
+cell_5_total_load_fileHeader = ["time_period", "total_load", "cell_barring", "cell_radius", "pes_num"]
 
-cell_6_fileHeader = ["time_period", "cat_id", "pe_id", "load"]
-cell_6_total_load_fileHeader = ["time_period", "total_load", "cell_barring", "cell_radius"]
+cell_6_fileHeader = ["time_period", "cell_id", "pe_id", "load"]
+cell_6_total_load_fileHeader = ["time_period", "total_load", "cell_barring", "cell_radius", "pes_num"]
+
+pes_results_fileHeader = ["time_period", "cell_id", "pe_id", "pe_load", "pes_num"]
 
 
 cell_0_results = []
@@ -36,6 +38,7 @@ cell_5_results = []
 cell_5_total_load_results = []
 cell_6_results = []
 cell_6_total_load_results = []
+pes_results = []
 
 def save_result_csv(folder_path):
     cell_0_csvFile = open(f'{folder_path}/cell_0_results.csv', "w")
@@ -121,3 +124,9 @@ def save_result_csv(folder_path):
     cell_6_total_load_writer.writerow(cell_6_total_load_fileHeader)
     cell_6_total_load_writer.writerows(cell_6_total_load_results)
     cell_6_total_load_csvFile.close()
+
+    pes_results_csvFile = open(f'{folder_path}/pes_results.csv', "w")
+    pes_results_writer = csv.writer(pes_results_csvFile)
+    pes_results_writer.writerow(pes_results_fileHeader)
+    pes_results_writer.writerows(pes_results)
+    pes_results_csvFile.close()
